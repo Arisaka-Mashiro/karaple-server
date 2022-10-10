@@ -23,6 +23,6 @@ export class AuthController {
       path: '/',
       httpOnly: true,
     });
-    res.redirect('/');
+    res.redirect(`${process.env.DOMAIN}/`);
   }
 }
