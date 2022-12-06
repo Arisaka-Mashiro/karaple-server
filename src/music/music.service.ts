@@ -83,12 +83,18 @@ export class MusicService {
         type = SearchType.SONG_NAME;
       }
 
+      const results = [];
       const [result1, result2] = await Promise.all([
         this.searchFromManana(keyword, type, brand),
         this.searchFromJoysound(keyword),
       ]);
+      [...result1, ...result2].forEach((item) => {
+        if (!results.find(x => x.no === item.no)) {
+          results.push(item);
+        }
+      });
 
-      return [...result1, ...result2];
+      return results;
     } catch (e) {
       throw e;
     }

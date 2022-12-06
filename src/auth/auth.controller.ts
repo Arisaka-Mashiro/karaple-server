@@ -9,7 +9,7 @@ export class AuthController {
 
   @Get('google/signin')
   @UseGuards(AuthGuard('google'))
-  public async googleRedirect() {
+  public async googleSignIn() {
     // 구글 로그인으로 넘어감
   }
 
@@ -23,6 +23,6 @@ export class AuthController {
       path: '/',
       httpOnly: true,
     });
-    res.redirect(`${process.env.DOMAIN}/`);
+    res.redirect(`http://${process.env.DOMAIN}/`);
   }
 }
