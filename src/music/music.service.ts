@@ -84,11 +84,12 @@ export class MusicService {
       }
 
       const results = [];
-      const [result1, result2] = await Promise.all([
-        this.searchFromManana(keyword, type, brand),
+      const [result1, result2, result3] = await Promise.all([
+        this.searchFromManana(keyword, type, Brand.TJ),
+        this.searchFromManana(keyword, type, Brand.KUMYOUNG),
         this.searchFromJoysound(keyword),
       ]);
-      [...result1, ...result2].forEach((item) => {
+      [...result1, ...result2, ...result3].forEach((item) => {
         if (!results.find(x => x.no === item.no)) {
           results.push(item);
         }

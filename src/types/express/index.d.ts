@@ -1,5 +1,5 @@
-// ./src/types/express.d.ts
-import { User } from '../models/User';
+// ./src/types/express/index.d.ts
+import { User } from '../../models/user';
 
 declare global {
 	namespace Express {
@@ -11,6 +11,9 @@ declare global {
 			accessToken: string;
 			refreshToken: string;
 			googleAccessToken: string;
+		}
+		interface Request {
+			user: User
 		}
 	}
 }

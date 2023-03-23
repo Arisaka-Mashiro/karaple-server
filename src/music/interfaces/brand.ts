@@ -1,5 +1,5 @@
 export enum Brand {
-  KUMYOUNG = 'kemyoung',
+  KUMYOUNG = 'kumyoung',
   TJ = 'tj',
   DAM = 'dam',
   JOYSOUND = 'joysound',
